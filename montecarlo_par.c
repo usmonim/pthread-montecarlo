@@ -39,10 +39,7 @@ int main(int argc, char* argv[]){
 
     for (thread = 0; thread < num_threads; thread++) 
       pthread_join(thread_handles[thread], NULL);      
-
     
-    
-
     // printf("%lld \n", number_of_tosses);
     // printf("%d \n", num_threads);
 
@@ -56,17 +53,11 @@ int main(int argc, char* argv[]){
     double estimate = number_in_circle_final / (double) number_of_tosses;
     printf("Estimate = %f \n", estimate);
 
-
-
     pthread_mutex_destroy(&mutex);
 
     free(thread_handles);
     return 0;
 }
-
-
-
-
 
 void* estimates(void* rank){
     long my_rank = (long) rank;
@@ -107,11 +98,6 @@ void* estimates(void* rank){
     return NULL;
         
 }
-
-
-
-
-
 // random double generator
 double rand_range(double min, double max){
     double range = (max - min); 
